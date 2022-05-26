@@ -92,7 +92,7 @@ int ordenarViviendaPorCalle(eVivienda* list, int len)
         {
             for(j=i+1; j<len-1; j++)
             {
-            	if((list+i)->idVivienda > 2000 && (list+j)->idVivienda > 2000)
+            	if((list+i)->idVivienda != -1 && (list+j)->idVivienda != -1)
             	{
             		diferencia = strcmp((list+i)->calle,(list+j)->calle );
 
@@ -136,7 +136,7 @@ void mostrarVivienda(eVivienda vivienda)
 				strcpy(tipoDeVivienda,"Departamento");
 				break;
 			case 3:
-				strcpy(tipoDeVivienda,"Casillaasa");
+				strcpy(tipoDeVivienda,"Casilla");
 				break;
 			case 4:
 				strcpy(tipoDeVivienda,"Rancho");
@@ -444,8 +444,10 @@ void bajaVivienda(eVivienda* lista, int len, int* flagCarga)
 				printf("El id de la vivienda ingresado es incorrecto.\n");
 			}
 		}
-		printf("Algo salio mal\n");
-
+		else
+		{
+			printf("Algo salio mal\n");
+		}
 	}
 	else
 	{
