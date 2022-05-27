@@ -20,7 +20,9 @@ void mostrarMenuPrincipal(char* opcion)
 							"C)BAJA VIVIENDA\n"
 							"D)LISTAR VIVIENDAS\n"
 							"E)LISTAR CENCISTAS\n"
-							"F)SALIR\n", "Error, Elija una opcion valida.\n");
+							"F)INFORMAR CENCISTA\n"
+							"G)SENCISTA MAS CENSOS\n"
+							"H)SALIR\n", "Error, Elija una opcion valida.\n");
 }
 
 void mostrarMenuModificacion(int* opcion)

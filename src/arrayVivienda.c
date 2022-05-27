@@ -256,15 +256,21 @@ void altaVivienda(eVivienda* listaVivienda, int len,int* ids,int* flagIngreso, e
 			case 1:
 				viviendaAux.legajoCencista.legajoCencista = listaCencista[2].legajoCencista;
 				strcpy(viviendaAux.legajoCencista.nombre,listaCencista[2].nombre);
+				strcpy(viviendaAux.legajoCencista.telefono, listaCencista[2].telefono);
+				viviendaAux.legajoCencista.edad = listaCencista[2].edad;
 				break;
 			case 2:
 				viviendaAux.legajoCencista.legajoCencista = listaCencista[0].legajoCencista;
 				strcpy(viviendaAux.legajoCencista.nombre,listaCencista[0].nombre);
+				strcpy(viviendaAux.legajoCencista.telefono, listaCencista[0].telefono);
+				viviendaAux.legajoCencista.edad = listaCencista[0].edad;
 				break;
 			case 3:
 			case 4:
 				viviendaAux.legajoCencista.legajoCencista = listaCencista[1].legajoCencista;
 				strcpy(viviendaAux.legajoCencista.nombre,listaCencista[1].nombre);
+				strcpy(viviendaAux.legajoCencista.telefono, listaCencista[0].telefono);
+				viviendaAux.legajoCencista.edad = listaCencista[0].edad;
 				break;
 		}
 
@@ -454,4 +460,77 @@ void bajaVivienda(eVivienda* lista, int len, int* flagCarga)
 		printf("Necesita cargar datos primero\n");
 	}
 }
+
+void informarDatosCencista(eVivienda* listaVivienda, int lenVivienda, eCencista*  listaCencista,  int lenCencista, int* contadorPrimerCencista, int* contadorSegundoCencista, int* contadorTercerCencista)
+{
+	int i;
+
+	if(listaVivienda != NULL && listaCencista != NULL && lenVivienda > 0 && lenCencista > 0)
+	{
+		printf("INFORMACION CENCISTAS:\n\n");
+
+		printf("--------------------------------------------------------------------------------------------------------------------\n");
+		mostrarCencista(listaCencista[0]);
+
+		for(i=0; lenVivienda > i; i++)
+		{
+
+			if(listaCencista[0].legajoCencista == listaVivienda[i].legajoCencista.legajoCencista)
+			{
+				*contadorPrimerCencista = *contadorPrimerCencista + 1;
+
+				printf(" ");
+				if(listaVivienda[i].idVivienda > -1)
+				{
+					mostrarVivienda(listaVivienda[i]);
+				}
+
+			}
+		}
+
+		printf("--------------------------------------------------------------------------------------------------------------------\n");
+
+		mostrarCencista(listaCencista[1]);
+
+		for(i=0; lenVivienda > i; i++)
+		{
+
+			if(listaCencista[1].legajoCencista == listaVivienda[i].legajoCencista.legajoCencista)
+			{
+				*contadorSegundoCencista = *contadorSegundoCencista + 1;
+
+				printf(" ");
+				if(listaVivienda[i].idVivienda > -1)
+				{
+					mostrarVivienda(listaVivienda[i]);
+				}
+
+			}
+		}
+
+		printf("--------------------------------------------------------------------------------------------------------------------\n");
+
+		mostrarCencista(listaCencista[2]);
+
+		for(i=0; lenVivienda > i; i++)
+		{
+
+			if(listaCencista[2].legajoCencista == listaVivienda[i].legajoCencista.legajoCencista)
+			{
+				*contadorTercerCencista = *contadorTercerCencista + 1;
+
+				printf(" ");
+				if(listaVivienda[i].idVivienda > -1)
+				{
+					mostrarVivienda(listaVivienda[i]);
+				}
+			}
+		}
+
+		printf("--------------------------------------------------------------------------------------------------------------------\n");
+
+	}
+
+}
+
 

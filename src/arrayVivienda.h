@@ -141,3 +141,5 @@ int bajaLogica(eVivienda* lista, int len, int pocisionIdBorrar);
  */
 void bajaVivienda(eVivienda* lista, int len, int* flagCarga);
 
+void informarDatosCencista(eVivienda* listaVivienda, int lenVivienda, eCencista*  listaCencista,  int lenCencista, int* contadorPrimerCencista, int* contadorSegundoCencista, int* contadorTercerCencista);
+

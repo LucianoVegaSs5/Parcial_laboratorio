@@ -65,3 +65,31 @@ int printCencista(eCencista* lista, int len)
 
 	return retorno;
 }
+void cencistaMasCencos(int primerCencista, int segundoCencista, int tercerCencista, eCencista* listaCencista)
+{
+
+
+	if(listaCencista != NULL)
+	{
+		if(primerCencista >= segundoCencista && primerCencista >= tercerCencista)
+		{
+			printf("El cencista con mas censos es %s", listaCencista[0].nombre);
+		}
+		else
+		{
+
+			if(segundoCencista >=  primerCencista && segundoCencista >= tercerCencista)
+			{
+				printf("El cencista con mas censos es %s", listaCencista[1].nombre);
+			}
+			else
+			{
+				if(tercerCencista >=  primerCencista && tercerCencista >=  segundoCencista)
+				{
+						printf("El cencista con mas censos es %s", listaCencista[2].nombre);
+				}
+
+			}
+		}
+	}
+}

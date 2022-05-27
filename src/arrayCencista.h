@@ -47,3 +47,5 @@ void mostrarCencista(eCencista cencista);
  * @return
  */
 int printCencista(eCencista* lista, int len);
+
+void cencistaMasCencos(int primerCencista, int segundoCencista, int tercerCencista, eCencista* listaCencista);

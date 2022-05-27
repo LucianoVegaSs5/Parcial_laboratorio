@@ -20,6 +20,10 @@ Parcial Laboratorio
 #define LEN 100 //LARGO
 #define LENCENCISTAS 3 // CANCTIDAD CENCISTAS
 
+
+void cencistaMasCencos(int primerCencista, int segundoCencista, int tercerCencista, eCencista* listaCencista);
+
+
 int main(void) {
 	setbuf(stdout, NULL);
 
@@ -30,6 +34,11 @@ int main(void) {
 	int salir;
 	char opcionLetra;
 	int flagIngreso = 0;
+
+	int contadorPrimerCencista = 0;
+	int contadorSegundoCencista = 0;
+	int contadorTercerCencista = 0;
+
 
 	if(inicializadorVivienda(listaVivienda, LEN) == 1 && hardcodearCencista(listaCencista) == 1)
 	{
@@ -56,6 +65,12 @@ int main(void) {
 					printCencista(listaCencista, LENCENCISTAS);
 					break;
 				case 'F':
+					informarDatosCencista(listaVivienda, LEN, listaCencista, LENCENCISTAS, &contadorPrimerCencista, &contadorSegundoCencista, &contadorTercerCencista);
+					break;
+				case 'G':
+					cencistaMasCencos(contadorPrimerCencista, contadorSegundoCencista, contadorTercerCencista, listaCencista);
+					break;
+				case 'H':
 					mostrarMenuSalida(&salir);
 					break;
 				default:
@@ -73,6 +88,10 @@ int main(void) {
 	}
 
 }
+
+
+
+
 
 
 
